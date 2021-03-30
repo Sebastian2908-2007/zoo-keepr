@@ -153,6 +153,15 @@
         "hungry"
       ],
       "id": "15"
+    },
+    {
+      "name": "tom",
+      "species": "dog",
+      "diet": "omnivore",
+      "personalityTraits": [
+        "anxious"
+      ],
+      "id": "16"
     }
   ]
 }
