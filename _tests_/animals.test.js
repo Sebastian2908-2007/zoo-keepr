@@ -20,14 +20,14 @@ test('creates an animal object', () => {
 test('filters by query', () => {
   const startingAnimals = [
     {
-        id: "3",
+        id: "2",
         name: "Erica",
         species: "gorilla",
         diet: "omnivore",
         personalityTraits: ["quirky", "rash"],
       },
       {
-        id: "4",
+        id: "3",
         name: "Noel",
         species: "bear",
         diet: "carnivore",
@@ -37,6 +37,27 @@ test('filters by query', () => {
   const updatedAnimals = filterByQuery({species: 'gorrilla'} , startingAnimals);
 
   expect(updatedAnimals.length).toEqual(0);
+});
+
+test('finds by Id', () => {
+    const startingAnimals = [
+        {
+            id: "3",
+            name: "Erica",
+            species:"gorilla",
+            diet: "omnivore",
+            personalityTraits: ["quirky", "rash"],
+        },
+        {
+           id:"4",
+           name:"Noel",
+           species:"bear",
+           diet:"carnivore",
+           personalityTraits:["impish", "sassy", "brave"],
+        },
+    ]
+    const result = findById("3", startingAnimals);
+    expect(result.name).toBe("Erica");
 });
 
 test('validates personality traits', () => {
